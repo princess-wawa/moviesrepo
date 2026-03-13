@@ -1,3 +1,6 @@
+@extends('layout.app')
+
+@section('content')
 <h1>Liste des Films</h1>
 
 <ul>
@@ -9,3 +12,4 @@
     </li>
 @endforeach
 </ul>
+@endsection
