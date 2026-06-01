@@ -76,3 +76,79 @@ body {
     background-color: #ffd84d;
     transform: translateY(-2px);
 }
+
+
+/* Make container position relative for absolute buttons */
+.movie-container {
+    position: relative;
+}
+
+/* Top-right actions */
+.movie-actions {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Base icon button */
+.icon-btn {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #1c1c1c;
+    border: 1px solid #333;
+    border-radius: 10px;
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+/* SVG styling */
+.icon-btn svg {
+    width: 20px;
+    height: 20px;
+    stroke: #fff;
+    fill: none;
+    stroke-width: 2;
+}
+
+/* Hover effect */
+.icon-btn:hover {
+    transform: translateY(-2px);
+    border-color: #f5c518;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+}
+
+/* Edit (pen) hover color */
+.edit-btn:hover svg {
+    stroke: #f5c518;
+}
+
+/* Delete (trash) hover color */
+.delete-btn:hover svg {
+    stroke: #ff4d4d;
+}
+
+/* Back button stays separate (optional styling consistency) */
+.back-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 18px;
+    background: #f5c518;
+    color: #000;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: #ffd84d;
+    transform: translateY(-2px);
+}
