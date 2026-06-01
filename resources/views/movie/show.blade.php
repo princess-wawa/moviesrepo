@@ -7,7 +7,7 @@
 
         <div class="movie-content">
 
-            <img class="movie-poster" src="{{ asset('Image/films/' . $movie['Images']) }}">
+            <img class="movie-poster" src="{{ asset('Image/films/' . $movie['images']) }}">
 
             <div class="movie-description">
                 <p>{{ $movie['description'] }}</p>
