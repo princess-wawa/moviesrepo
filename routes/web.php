@@ -13,3 +13,7 @@ Route::get('/movies/{id}', [MovieController::class, 'show']);
 Route::get('/create', [MovieController::class, 'create']);
 
 Route::post('/movies', [MovieController::class, 'store']) ->name('movies.store');
+
+Route::get('/edit/{id}', [MovieController::class, 'edit']);
+
+Route::put('/movies/{movie}', [MovieController::class, 'update'])->name('movies.update');
