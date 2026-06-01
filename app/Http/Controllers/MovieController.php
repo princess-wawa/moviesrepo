@@ -118,4 +118,12 @@ class MovieController extends Controller
         return redirect('/movies')
             ->with('success', 'Film mis à jour avec succès.');
     }
+
+    public function delete($id)
+    {
+        $movie = Movie::findOrFail($id);
+        $movie->delete();  
+         return redirect('/movies')
+            ->with('success', 'Film supprimé avec succès.');
+    }
 }
