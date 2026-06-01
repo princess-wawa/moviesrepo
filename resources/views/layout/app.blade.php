@@ -2,8 +2,9 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Mon Blog</title>
+    <title>Movies repo</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/movie.css') }}">
     <link rel="stylesheet" href="{{ asset('css/header-footer.css') }}">
 </head>
 <body>

@@ -1,11 +1,21 @@
 @extends('layout.app')
 
 @section('content')
-<h1>{{ $movie['title'] }}</h1>
+    <div class="movie-container">
 
-<p>{{ $movie['description'] }}</p>
+        <h1 class="movie-title">{{ $movie['title'] }}</h1>
 
-<img src="{{ asset('Image/films/' . $movie['Images']) }}">
+        <div class="movie-content">
 
-<a href="/movies">Retour</a>
+            <img class="movie-poster" src="{{ asset('Image/films/' . $movie['Images']) }}">
+
+            <div class="movie-description">
+                <p>{{ $movie['description'] }}</p>
+
+                <a class="back-btn" href="/movies">Retour</a>
+            </div>
+
+        </div>
+
+    </div>
 @endsection
