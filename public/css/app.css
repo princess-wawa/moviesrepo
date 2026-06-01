@@ -88,3 +88,20 @@ h1 {
         height: 300px;
     }
 }
+
+
+.create-btn {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+
+    width: 70px !important;
+    height: 70px !important;
+    border-radius: 14px !important;
+
+    z-index: 1000;
+}
+
+.create-btn:hover svg {
+    stroke: #f5c518;
+}

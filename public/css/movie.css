@@ -62,7 +62,7 @@ body {
 /* Back button */
 .back-btn {
     display: inline-block;
-    margin-top: 30px;
+    margin-top: -10px;
     padding: 12px 24px;
     background-color: #f5c518;
     color: #000;
@@ -76,7 +76,9 @@ body {
     background-color: #ffd84d;
     transform: translateY(-2px);
 }
-
+.buttons-container{
+    height: 0px;
+}
 
 /* Make container position relative for absolute buttons */
 .movie-container {
@@ -133,22 +135,4 @@ body {
 /* Delete (trash) hover color */
 .delete-btn:hover svg {
     stroke: #ff4d4d;
-}
-
-/* Back button stays separate (optional styling consistency) */
-.back-btn {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 10px 18px;
-    background: #f5c518;
-    color: #000;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.back-btn:hover {
-    background: #ffd84d;
-    transform: translateY(-2px);
 }
