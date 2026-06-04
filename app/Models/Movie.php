@@ -13,5 +13,7 @@ class Movie extends Model
         'description',
         'time',
         'images',
+        'release_date',
+        'director',
     ];
 }

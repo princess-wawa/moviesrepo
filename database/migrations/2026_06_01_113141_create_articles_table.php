@@ -17,9 +17,9 @@ return new class extends Migration
             $table->text('description');
             $table->string('time');
             $table->string('images');
-            $table->timestamps();
             $table->date('release_date');
             $table->string('director');
+            $table->timestamps();
             
         });
     }
