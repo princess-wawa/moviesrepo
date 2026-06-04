@@ -35,11 +35,11 @@
             <div class="form-group">
                 <label for="release_date">Date de sortie</label>
                 <input 
-                    type="datetime-local" 
+                    type="date" 
                     name="release_date" 
                     id="release_date" 
                     required 
-                    value="{{ old('release_date', isset($movie->release_date) ? \Carbon\Carbon::parse($movie->release_date)->format('Y-m-d\TH:i') : '') }}"
+                    value="{{ old('release_date', isset($movie->release_date) ? \Carbon\Carbon::parse($movie->release_date)->format('Y-m-d') : '') }}"
                 >
             </div>
 

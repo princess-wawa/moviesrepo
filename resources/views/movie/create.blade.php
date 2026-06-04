@@ -33,7 +33,7 @@
 
             <div class="form-group">
                 <label for="release_date">Date de sortie</label>
-                <input type="datetime-local" name="release_date" id="release_date" required >
+                <input type="date" name="release_date" id="release_date" required >
             </div>
 
             <div class="form-group">

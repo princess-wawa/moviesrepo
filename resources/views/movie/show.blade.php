@@ -41,6 +41,8 @@
     <h1 class="movie-title">{{ $movie->title }}</h1>
 
     <div class="movie-meta">
+
+        <!-- infos (metadata) about the movie -->
         <div class="meta-item">
             <span class="meta-label">Directeur</span>
             <span class="meta-value">{{ $movie->director }}</span>
@@ -55,7 +57,28 @@
             <span class="meta-label">Durée du film</span>
             <span class="meta-value">{{ $movie->time }}</span>
         </div>
+
+        <!-- compute the average rating -->
+        @php
+            $averageNote = $movie->comments->avg('note');
+        @endphp
+        <div class="meta-item">
+            <span class="meta-label">Note</span>
+    
+            <!-- show it using the same style as the comments -->
+            <div class="comment-stars">
+                @for ($i = 1; $i <= 5; $i++)
+                    @if ($i <= round($averageNote))
+                        <span class="star filled">★</span>
+                    @else
+                        <span class="star">★</span>
+                    @endif
+                @endfor
+            </div>
+        </div>
+
     </div>
+
 
     <div class="movie-content">
 
@@ -65,6 +88,75 @@
         <div class="movie-description">
             <p>{{ $movie->description }}</p>
         </div>
+        
+    </div>
+
+</div>
+
+
+
+<!-- comments -->
+<div class="comments-section">
+
+    <form class="comment-form" method="POST" action="{{ route('comments.store') }}">
+        @csrf
+
+        <!-- star selectio (styles radio input) -->
+        <div class="comment-rating">
+            <div class="stars-input">
+                @for ($i = 5; $i >= 1; $i--)
+                    <input type="radio" id="star{{ $i }}" name="note" value="{{ $i }}" required>
+                    <label for="star{{ $i }}">★</label>
+                @endfor
+            </div>
+        </div>
+
+        <!-- comment box -->
+        <div class="comment-box">
+            <textarea name="comment" placeholder="Write a comment..." required></textarea>
+        </div>
+
+        <!-- username box -->
+        <div class="comment-user">
+            <input type="text" name="name" placeholder="Username" required>
+        </div>
+
+        <!-- movie id for saving in the database (hidden) -->
+        <input type="hidden" name="movie_id" value="{{ $movie->id }}">
+
+        <!-- submit button -->
+        <div class="comment-submit">
+            <button type="submit">Post</button>
+        </div>
+    </form>
+
+    <!-- list the comments -->
+    <div class="comments-list">
+        
+        @forelse($movie->comments as $comment)
+            <div class="comment-card">
+                <div class="comment-top">
+                    <strong>{{ $comment->name }}</strong>
+
+                        <!-- display stars -->
+                        <div class="comment-stars">
+                            @for ($i = 1; $i <= 5; $i++)
+                                @if ($i <= $comment->note)
+                                    <span class="star filled">★</span>
+                                @else
+                                    <span class="star">★</span>
+                                @endif
+                            @endfor
+                        </div>
+
+                    </div>
+
+                <p class="comment-text">{{ $comment->comment }}</p>
+            </div>
+        
+        @empty <!-- if there are no comments: -->
+            <p class="no-comments">No comments yet.</p>
+        @endforelse
         
     </div>
 
