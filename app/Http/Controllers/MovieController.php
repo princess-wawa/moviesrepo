@@ -122,7 +122,13 @@ class MovieController extends Controller
     public function delete($id)
     {
         $movie = Movie::findOrFail($id);
-        $movie->delete();  
+
+        // delete the image
+        $imgPath = public_path('Image/films/' . $movie->images);
+        File::delete($imgPath);
+
+        // delete the entry
+        $movie->delete();
          return redirect('/movies')
             ->with('success', 'Film supprimé avec succès.');
     }
