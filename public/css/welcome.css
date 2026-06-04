@@ -1,0 +1,98 @@
+/* public/css/welcome.css */
+
+/* Page globale (Ton style appliqué) */
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+/* Conteneur visuel stylé (Inspiré de tes .card mais adapté en grand pour la présentation) */
+.project-card {
+    background: #1c1c1c;
+    border-radius: 12px;
+    padding: 64px 48px 48px 48px;
+    max-width: 650px;
+    width: 100%;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    position: relative;
+    border: 1px solid #2e2e2e; /* Séparateur discret comme sur tes cartes */
+}
+
+/* Title (Ton style avec l'alignement à GAUCHE demandé) */
+h1 {
+    text-align: left; /* Aligné à gauche comme demandé */
+    margin: 40px 0 20px 0; /* Espace pour ne pas chevaucher le bouton au-dessus */
+    font-size: 2rem;
+    color: #f5c518; /* Jaune IMDb */
+    letter-spacing: 2px;
+}
+
+/* Description à l'intérieur de la carte */
+.description {
+    font-size: 1.1rem;
+    color: #cccccc;
+    line-height: 1.6;
+    margin: 0;
+    text-align: left;
+}
+
+/* Style appliqué à ta classe exacte .Home */
+.Home {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    background: #2e2e2e;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+/* Effet au survol du bouton Home (Rappel du jaune IMDb) */
+.Home:hover {
+    color: #121212;
+    background-color: #f5c518;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(245, 197, 24, 0.2);
+}
+
+/* Pied de page */
+footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 0.8rem;
+    color: #666666;
+    border-top: 1px solid #1c1c1c;
+}
+
+/* Reponsive */
+@media (max-width: 768px) {
+    .project-card {
+        padding: 48px 24px 32px 24px;
+    }
+    h1 {
+        font-size: 1.75rem;
+    }
+    .description {
+        font-size: 1rem;
+    }
+}
