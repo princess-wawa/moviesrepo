@@ -34,7 +34,7 @@ class MovieSeeder extends Seeder
             'title' => 'ANNABELLE',
             'description' => 'Film d’horreur lié à l’univers de The Conjuring. L’histoire tourne autour d’une poupée possédée qui attire des forces démoniaques dans la maison d’un jeune couple. Des phénomènes terrifiants commencent alors à se produire.',
             'time' => '1h39',
-            'images' => 'ANNABELLE.jpg',
+            'images' => 'annabelle.jpg',
             'release_date' => '2014-10-03',
             'director' => 'John R. Leonetti',
         ]);

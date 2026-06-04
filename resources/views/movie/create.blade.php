@@ -17,13 +17,23 @@
             </div>
 
             <div class="form-group">
+                <label for="director">Réalisateur</label>
+                <input type="text" name="director" id="director" required>
+            </div>
+
+            <div class="form-group">
                 <label for="description">Description</label>
                 <textarea name="description" id="description" rows="5" required></textarea>
             </div>
 
             <div class="form-group">
                 <label for="time">Durée</label>
-                <input type="text" name="time" id="time" placeholder="en heures ou minutes" required>
+                <input type="text" name="time" id="time" required>
+            </div>
+
+            <div class="form-group">
+                <label for="release_date">Date de sortie</label>
+                <input type="datetime-local" name="release_date" id="release_date" required >
             </div>
 
             <div class="form-group">

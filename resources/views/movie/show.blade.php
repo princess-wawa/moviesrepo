@@ -11,7 +11,7 @@
         <div class="movie-actions">
             
             <!-- Edit -->
-            <a class="icon-btn edit-btn" href="/edit/{{ $movie['id'] }}" title="Modifier">
+            <a class="icon-btn edit-btn" href="/edit/{{ $movie->id }}" title="Modifier">
                 <!-- Pen icon source: https://proicons.com/icons/419271/mode-edit/ -->
                 <svg viewBox="0 0 24 24">
                     <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25z"></path>
@@ -20,7 +20,7 @@
             </a>
             
             <!-- Delete -->
-            <form action="{{ route('movies.delete', $movie['id']) }}" method="POST"
+            <form action="{{ route('movies.delete', $movie->id) }}" method="POST"
             onsubmit="return confirm('Supprimer ce film ?')">
             @csrf
             @method('DELETE')
@@ -38,15 +38,32 @@
         </div>
     </div>
 
-    <h1 class="movie-title">{{ $movie['title'] }}</h1>
+    <h1 class="movie-title">{{ $movie->title }}</h1>
+
+    <div class="movie-meta">
+        <div class="meta-item">
+            <span class="meta-label">Directeur</span>
+            <span class="meta-value">{{ $movie->director }}</span>
+        </div>
+
+        <div class="meta-item">
+            <span class="meta-label">Date de sortie</span>
+            <span class="meta-value">{{ $movie->release_date }}</span>
+        </div>
+
+        <div class="meta-item">
+            <span class="meta-label">Durée du film</span>
+            <span class="meta-value">{{ $movie->time }}</span>
+        </div>
+    </div>
 
     <div class="movie-content">
 
         
-        <img class="movie-poster" src="{{ asset('Image/films/' . $movie['images']) }}">
+        <img class="movie-poster" src="{{ asset('Image/films/' . $movie->images) }}">
         
         <div class="movie-description">
-            <p>{{ $movie['description'] }}</p>
+            <p>{{ $movie->description }}</p>
         </div>
         
     </div>

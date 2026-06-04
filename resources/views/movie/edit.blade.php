@@ -18,13 +18,29 @@
             </div>
 
             <div class="form-group">
+                <label for="director">Réalisateur</label>
+                <input type="text" name="director" id="director" required value="{{ old('director', $movie->director) }}">
+            </div>
+
+            <div class="form-group">
                 <label for="description">Description</label>
                 <textarea name="description" id="description" rows="5" required>{{ old('description', $movie->description) }}</textarea>
             </div>
 
             <div class="form-group">
                 <label for="time">Durée</label>
-                <input type="text" name="time" id="time" placeholder="en heures ou minutes" required value="{{ old('time', $movie->time) }}">
+                <input type="text" name="time" id="time" required value="{{ old('time', $movie->time) }}">
+            </div>
+
+            <div class="form-group">
+                <label for="release_date">Date de sortie</label>
+                <input 
+                    type="datetime-local" 
+                    name="release_date" 
+                    id="release_date" 
+                    required 
+                    value="{{ old('release_date', isset($movie->release_date) ? \Carbon\Carbon::parse($movie->release_date)->format('Y-m-d\TH:i') : '') }}"
+                >
             </div>
 
             <div class="form-group">
