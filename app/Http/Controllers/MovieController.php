@@ -24,8 +24,7 @@ class MovieController extends Controller
 
     public function show($id)
     {
-        $movies = $this->getMovies();
-        $movie = collect($movies)-> firstWhere('id', $id);
+        $movie = Movie::with('comments')->findOrFail($id);
 
         return view('movie.show', [
             'movie' => $movie
@@ -44,15 +43,14 @@ class MovieController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required|string',
             'time' => 'required|string|max:20',
+            'release_date' => 'nullable|date',
+            'director' => 'nullable|string|max:255',
             'image' => 'required|image|mimes:jpg,jpeg,png,webp',
         ]);
 
-        // Create image name from title
         $extension = $request->file('image')->getClientOriginalExtension();
-
         $imageName = Str::slug($request->title) . '.' . $extension;
 
-        // Upload to public/Image/films/
         $request->file('image')->move(
             public_path('Image/films'),
             $imageName
@@ -62,6 +60,8 @@ class MovieController extends Controller
             'title' => $request->title,
             'description' => $request->description,
             'time' => $request->time,
+            'release_date' => $request->release_date,
+            'director' => $request->director,
             'images' => $imageName,
         ]);
 
@@ -85,6 +85,8 @@ class MovieController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required|string',
             'time' => 'required|string|max:20',
+            'release_date' => 'nullable|date',
+            'director' => 'nullable|string|max:255',
             'image' => 'nullable|image|mimes:jpg,jpeg,png,webp',
         ]);
 
@@ -112,6 +114,8 @@ class MovieController extends Controller
             'title' => $request->title,
             'description' => $request->description,
             'time' => $request->time,
+            'release_date' => $request->release_date,
+            'director' => $request->director,
             'images' => $imageName,
         ]);
 

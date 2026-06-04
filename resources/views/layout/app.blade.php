@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="{{ asset('css/movie.css') }}">
     <link rel="stylesheet" href="{{ asset('css/header-footer.css') }}">
     <link rel="stylesheet" href="{{ asset('css/form.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/comments.css') }}">
 </head>
 <body>
     <header>
-        <h1>🎬MovieGang</h1>   
+        <h1>MovieGang</h1>   
     </header>
     
 
