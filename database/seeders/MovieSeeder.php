@@ -17,6 +17,8 @@ class MovieSeeder extends Seeder
             'description' => 'Premier film de la trilogie inspirée du livre de J. R. R. Tolkien. Il suit Bilbo Baggins, un hobbit qui part à l’aventure avec le magicien Gandalf et un groupe de nains pour récupérer leur royaume gardé par un dragon.',
             'time' => '2h49',
             'images' => 'HOBBIT.jpg',
+            'release_date' => '2012-12-12',
+            'director' => 'Peter Jackson',
         ]);
 
         Movie::create([
@@ -24,13 +26,17 @@ class MovieSeeder extends Seeder
             'description' => 'Ce film de la saga Fast & Furious film series suit Sean, un jeune passionné de voitures qui part vivre à Tokyo. Il découvre le monde des courses de rue et la technique du drift, tout en affrontant le pilote le plus redouté de la ville.',
             'time' => '1h44',
             'images' => 'TOKYO DRIFT.jpg',
+            'release_date' => '2006-06-16',
+            'director' => 'Justin Lin',
         ]);
 
-       Movie::create([
+        Movie::create([
             'title' => 'ANNABELLE',
             'description' => 'Film d’horreur lié à l’univers de The Conjuring. L’histoire tourne autour d’une poupée possédée qui attire des forces démoniaques dans la maison d’un jeune couple. Des phénomènes terrifiants commencent alors à se produire.',
             'time' => '1h39',
             'images' => 'ANNABELLE.jpg',
+            'release_date' => '2014-10-03',
+            'director' => 'John R. Leonetti',
         ]);
 
         Movie::create([
@@ -38,6 +44,8 @@ class MovieSeeder extends Seeder
             'description' => 'Ce film, inspiré du roman de Alexandre Dumas, raconte l’histoire d’Edmond Dantès, un marin injustement accusé de trahison et emprisonné pendant des années. Après s’être échappé et avoir découvert un immense trésor, il devient le mystérieux Comte de Monte-Cristo et prépare une vengeance contre ceux qui l’ont trahi.',
             'time' => '2h58',
             'images' => 'MONTECRISTO.jpg',
+            'release_date' => '2024-06-28',
+            'director' => 'Alexandre de La Patellière & Matthieu Delaporte',
         ]);
 
         Movie::create([
@@ -45,6 +53,8 @@ class MovieSeeder extends Seeder
             'description' => 'Le film suit un homme insomniaque qui rencontre Tyler Durden, un personnage charismatique et rebelle. Ensemble, ils créent un club secret où les hommes se battent pour se sentir vivants, mais le mouvement prend rapidement une tournure dangereuse.',
             'time' => '2h19',
             'images' => 'FIGHT CLUB.jpg',
+            'release_date' => '1999-10-15',
+            'director' => 'David Fincher',
         ]);
 
         Movie::create([
@@ -52,6 +62,8 @@ class MovieSeeder extends Seeder
             'description' => 'Ce film suit Pete Maverick Mitchell, un pilote talentueux de l’aviation militaire américaine qui entre dans une école d’élite pour pilotes de chasse. Entre rivalités, romance et missions aériennes spectaculaires, il doit prouver qu’il est le meilleur.',
             'time' => '1h50',
             'images' => 'TOP GUN.jpg',
+            'release_date' => '1986-05-16',
+            'director' => 'Tony Scott',
         ]);
 
         Movie::create([
@@ -59,6 +71,8 @@ class MovieSeeder extends Seeder
             'description' => 'Ce film raconte la relation entre Anastasia Steele, une étudiante, et Christian Grey, un riche homme d’affaires mystérieux. Leur histoire explore une relation amoureuse intense et compliquée basée sur la confiance et le pouvoir.',
             'time' => '2h05',
             'images' => '50 NUANCES DE GREY.jpg',
+            'release_date' => '2015-02-13',
+            'director' => 'Sam Taylor-Johnson',
         ]);
 
         Movie::create([
@@ -66,6 +80,8 @@ class MovieSeeder extends Seeder
             'description' => 'L’histoire suit Lightning McQueen, une voiture de course ambitieuse qui rêve de devenir célèbre en remportant la Piston Cup. Sur la route vers une grande course, il se perd et se retrouve dans une petite ville oubliée appelée Radiator Springs.',
             'time' => '1h57',
             'images' => 'CARS.jpg',
+            'release_date' => '2006-06-09',
+            'director' => 'John Lasseter',
         ]);
     }
 }
