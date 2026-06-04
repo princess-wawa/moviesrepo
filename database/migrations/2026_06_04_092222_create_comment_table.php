@@ -13,7 +13,7 @@ return new class extends Migration
     {
        
 {
-    Schema::create('com', function (Blueprint $table) {
+    Schema::create('comment', function (Blueprint $table) {
         $table->id();
 
         $table->unsignedBigInteger('movie_id');
