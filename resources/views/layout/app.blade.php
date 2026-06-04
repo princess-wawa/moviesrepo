@@ -9,12 +9,14 @@
     <link rel="stylesheet" href="{{ asset('css/form.css') }}">
 </head>
 <body>
-    <!-- Header -->
-    <!-- End -->
+    <header>   
+    </header>
+    
 
         @yield('content')
 
-    <!-- Footer -->
-    <!-- End -->
+    <footer>
+    </footer>
+    
 </body>
 </html>
